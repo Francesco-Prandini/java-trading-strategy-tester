@@ -100,7 +100,7 @@ public class GraphPanel extends JPanel {
                 }
         }
 
-// create x and y axes
+
         g2.drawLine(padding + labelPadding, getHeight() - padding - labelPadding, padding + labelPadding, padding);
         g2.drawLine(padding + labelPadding, getHeight() - padding - labelPadding, getWidth() - padding, getHeight() - padding - labelPadding);
 
