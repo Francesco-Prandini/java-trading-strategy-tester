@@ -23,10 +23,7 @@ import javax.swing.SwingUtilities;
 
 import java.math.BigDecimal;
 
-/**
- *
- * @author Francesco
- */
+
 public class GraphPanel extends JPanel {
  private int width = 800;
     private int heigth = 400;
@@ -62,12 +59,11 @@ public class GraphPanel extends JPanel {
             graphPoints.add(new Point(x1, y1));
         }
 
-// draw white background
+
         g2.setColor(Color.WHITE);
         g2.fillRect(padding + labelPadding, padding, getWidth() - (2 * padding) - labelPadding, getHeight() - 2 * padding - labelPadding);
         g2.setColor(Color.BLACK);
 
-// create hatch marks and grid lines for y axis.
         for (int i = 0; i < numberYDivisions + 1; i++) {
             int x0 = padding + labelPadding;
             int x1 = pointWidth + padding + labelPadding;
@@ -85,7 +81,6 @@ public class GraphPanel extends JPanel {
             //g2.drawLine(x0, y0, x1, y1);
        }
 
-// and for x axis
         for (int i = 0; i < scores.size(); i++) {
             if (scores.size() > 1) {
                 int x0 = i * (getWidth() - padding * 2 - labelPadding) / (scores.size() - 1) + padding + labelPadding;
@@ -131,26 +126,6 @@ public class GraphPanel extends JPanel {
         }
     }
 
-// @Override
-// public Dimension getPreferredSize() {
-// return new Dimension(width, heigth);
-// }
-
-   /* private double getMinScore() {
-        GraphEntry minScore = Double.MAX_VALUE;
-        for (GraphEntry score : scores) {
-            minScore = Math.min(minScore.getValue().doubleValue(), score.getValue().doubleValue());
-        }
-        return minScore;
-    }
-
-    private double getMaxScore() {
-        GraphEntry maxScore=new GraphEntry(null,new BigDecimal(0));
-        for (GraphEntry score : scores) {
-            maxScore = Math.max(maxScore.getValue().doubleValue(), score.getValue().doubleValue());
-        }
-        return maxScore;
-    }*/
 
     private GraphEntry getMinScore(){
         int i;
@@ -173,16 +148,6 @@ public class GraphPanel extends JPanel {
         return f;
     }
 
-
-   /* public void setScores(List<Double> scores) {
-        this.scores = scores;
-        invalidate();
-        this.repaint();
-    }
-
-    public List<Double> getScores() {
-        return scores;
-    }*/
 
 
 }
